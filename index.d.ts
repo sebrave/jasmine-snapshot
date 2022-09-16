@@ -6,13 +6,13 @@ declare module 'jasmine-snapshot' {
 	export let MatchesJSSnapshot: (snapshot: string, actual: any) => void;
 	export let ResetExceptionList: () => void;
 
-	export function registerSnapshots(snapshot_object: { [key: string]: string }, suiteNname: string)
+	export function registerSnapshots(snapshot_object: { [key: string]: string }, suiteNname: string): any;
 
 	export class SnapshotJSInner
 	{
 		constructor(actual: Object);
 		public toMatchSnapshot(snapshot?: string): void;
-		public afterApplying(transformFunction: (actual: Object) => Object);
+		public afterApplying(transformFunction: (actual: Object) => Object): any;
 	}
 
 
@@ -20,7 +20,7 @@ declare module 'jasmine-snapshot' {
 	{
 		constructor(actual: string);
 		public toMatchSnapshot(snapshot?: string): void;
-		public afterApplying(transformFunction: (actual: string) => string);
+		public afterApplying(transformFunction: (actual: string) => string): any;
 	}
 
 	export function expectjs(actual: Object): SnapshotJSInner;
